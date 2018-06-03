@@ -1,0 +1,46 @@
+[alias]
+    g = grep -WIn --heading
+    f = "!git ls-files | grep -i"
+    cp = cherry-pick
+    ci = commit
+    co = checkout
+    br = branch
+    st = status
+[color]
+    # Since we're using VIM as the pager for git grep, we don't want ANSI escape
+    # characters intermixed in the output.
+    grep = false
+[core]
+    # Use vim to edit commit messages:
+    # https://git-scm.com/docs/git-config#git-config-coreeditor
+    editor = vim
+    # Use custom `.gitignore`
+    excludesfile = ~/.gitignore_global
+[diff]
+    # You're using meld as your git difftool:
+    # https://git-scm.com/docs/git-config#git-config-difftool
+    #
+    # See:
+    # https://git-scm.com/docs/git-difftool
+    tool = meld
+[difftool]
+    # Don't prompt before each invocation of the diff tool:
+    # https://git-scm.com/docs/git-config#git-config-difftoolprompt
+    prompt = false
+[pager]
+    # You use VIM as a your "git grep" pager so that you have CPP highlighting
+    # (something git will never be able to do).
+    #
+    # A side effect is that you can use your VIM cursor to follow tags in these
+    # searches.
+    #
+    # See:
+    # https://git-scm.com/docs/git-config#git-config-pagerltcmdgt
+    g = vim -c 'set syn=cpp' -R -
+[rebase]
+    # See --autosquash on the git rebase command:
+    # https://git-scm.com/docs/git-rebase#git-rebase---no-autosquash
+    #
+    # This article explains the feature in more detail:
+    # https://robots.thoughtbot.com/autosquashing-git-commits
+    autosquash = true
