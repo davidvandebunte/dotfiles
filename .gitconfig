@@ -27,6 +27,8 @@
     # Don't prompt before each invocation of the diff tool:
     # https://git-scm.com/docs/git-config#git-config-difftoolprompt
     prompt = false
+[include]
+    path = ~/.gitconfig_local
 [pager]
     # You use VIM as a your "git grep" pager so that you have CPP highlighting
     # (something git will never be able to do).
