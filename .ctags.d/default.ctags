@@ -1,0 +1,8 @@
+# The universal-ctags config file setup is different from exuberant-ctags:
+# https://stackoverflow.com/questions/49707754
+--recurse=yes
+--exclude=.git
+--C++-kinds=+p
+--exclude=GroundTruth
+--exclude=\*.json
+--exclude=HDR-data
