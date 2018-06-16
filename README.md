@@ -7,4 +7,5 @@ repository is relative to the remote, as explained in
 [this answer](https://stackoverflow.com/a/36410649). That is, you should also run:
 ```
 config config remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+config fetch
 ```
