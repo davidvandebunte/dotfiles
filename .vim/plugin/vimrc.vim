@@ -31,6 +31,7 @@ autocmd VimLeave * call system("xsel -ip", getreg('*'))
 
 " Vundle setup, as described here:
 " https://github.com/VundleVim/Vundle.vim
+set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
