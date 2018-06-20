@@ -1,8 +1,43 @@
+# INSTALLATION
+# 1. There's a very old version of ctags out there you aren't interested in at
+#    all. Just be aware it exists (was installed by default in Ubuntu 16.04).
+# 2. The exuberant-cags version of ctags is much newer, but it hasn't been
+#    touched since 2009:
+#    http://ctags.sourceforge.net/
+# 3. You're using universal ctags:
+#    https://ctags.io/
+#    (no man page, just online documentation?)
+#
+#    You're using it because it's maintained, and because it advertises a new
+#    C++ parser (critical for a rapidly changing language):
+#    http://docs.ctags.io/en/latest/parser-cxx.html
+#    https://stackoverflow.com/a/41655978/622049
+#    https://stackoverflow.com/a/31329643/622049
+#
+#    Follow these instructions to install to /usr/local/bin:
+#    https://askubuntu.com/a/836521/612216
+
 # The universal-ctags config file setup is different from exuberant-ctags:
 # https://stackoverflow.com/questions/49707754
 --recurse=yes
+
+# Standard exclude
 --exclude=.git
+
+# To see the languages supported by ctags:
+# ctags --list-languages
+#
+# List the kinds of tags supported by C++ with:
+# ctags --list-kinds=C++
 --C++-kinds=+p
+
+# Excludes specific to LocalizationGeometry and HDMA. Add more to make tags
+# generation faster.
+#
+# These are critical to avoid the common problem of tags that are too long for
+# VIM to handle (you'll see an E431 error otherwise):
+# https://groups.google.com/forum/#!topic/vim_dev/vUs9NsuZqGQ
+# https://stackoverflow.com/questions/27314151
 --exclude=GroundTruth
 --exclude=\*.json
 --exclude=HDR-data
