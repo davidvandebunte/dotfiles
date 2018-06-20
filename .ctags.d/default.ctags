@@ -41,3 +41,10 @@
 --exclude=GroundTruth
 --exclude=\*.json
 --exclude=HDR-data
+
+# You're often looking for a way to switch to the header file from the source
+# file in VIM. See suggestions here:
+# http://vim.wikia.com/wiki/Easily_switch_between_source_and_header_file
+#
+# You currently prefer the ctags suggestion.
+--extras=+f
