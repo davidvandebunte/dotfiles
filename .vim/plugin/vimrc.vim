@@ -59,7 +59,7 @@ Plugin 'VundleVim/Vundle.vim'
 " So, you can’t really use the default clang-format.py installed with ubuntu
 " (it’s written for Python2).
 Plugin 'rhysd/vim-clang-format'
-autocmd FileType c,cpp ClangFormatAutoEnable
+autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
 
 " ALE will find whatever linters you have installed.
 Plugin 'w0rp/ale'
