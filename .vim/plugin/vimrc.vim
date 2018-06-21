@@ -64,6 +64,12 @@ autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
 " ALE will find whatever linters you have installed.
 Plugin 'w0rp/ale'
 
+" This plugin will update your tags file every time you update a source file
+" in VIM. It only updates the tags for the source file you edited.
+" https://github.com/craigemery/vim-autotag
+" https://ricostacruz.com/til/navigate-code-with-ctags
+Plugin 'craigemery/vim-autotag'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
