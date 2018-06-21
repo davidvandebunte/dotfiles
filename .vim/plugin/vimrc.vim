@@ -7,6 +7,9 @@ set number
 " You typically need this when you're jumping from file to file with tags.
 set hidden
 
+" Highlight search results
+set hlsearch
+
 " Disable the arrow keys (to remove the bad habit of using them)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
