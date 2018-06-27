@@ -10,11 +10,18 @@ set hidden
 " Highlight search results
 set hlsearch
 
-" Disable the arrow keys (to remove the bad habit of using them)
+" Disable the arrow keys in normal mode (leave in normal mode)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+" Disable the arrow keys in insert mode (send to normal mode)
+" https://stackoverflow.com/a/23549041/622049
+noremap! <Up> <Esc>
+noremap! <Down> <Esc>
+noremap! <Left> <Esc>
+noremap! <Right> <Esc>
 
 " Always use four spaces for a tab
 " https://stackoverflow.com/a/234578
