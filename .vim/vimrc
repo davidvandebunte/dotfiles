@@ -10,6 +10,9 @@ set hidden
 " Highlight search results
 set hlsearch
 
+" Enable mouse support
+set mouse=a
+
 " Disable the arrow keys in normal mode (leave in normal mode)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
