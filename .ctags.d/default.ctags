@@ -41,6 +41,7 @@
 --exclude=GroundTruth
 --exclude=\*.json
 --exclude=HDR-data
+--exclude=html
 
 # You're often looking for a way to switch to the header file from the source
 # file in VIM. See suggestions here:
