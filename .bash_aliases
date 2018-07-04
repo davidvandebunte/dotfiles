@@ -3,6 +3,18 @@
 alias nmk="nice -n 2 make -k -j20"
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" nmk
 
+# You found the ninja completion script here:
+# https://github.com/ninja-build/ninja/blob/master/misc/bash-completion
+#
+# You found where it was installed on your local machine with:
+# dpkg-query -L ninja-build
+NINJA_BASH_COMPLETION="/usr/share/bash-completion/completions/ninja"
+if [ -f $NINJA_BASH_COMPLETION ]; then
+    source $NINJA_BASH_COMPLETION
+    alias nj="nice -n 2 ninja -k 100 -j20"
+    complete -F _ninja_target nj
+fi
+
 # The alias suggested in this article:
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
