@@ -30,6 +30,10 @@ fi
 # This is primarily to solve the same problem being asked about in the SO
 # question. From your home machine, you want to be able to log in to your
 # work machine and only enter your password once.
+#
+# You changed just one line; you don't need it to run ssh-add at the
+# same time it starts the agent (you'd rather be prompted the first time
+# you try to fetch).
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
@@ -38,7 +42,6 @@ function start_agent {
     echo succeeded
     chmod 600 "${SSH_ENV}"
     . "${SSH_ENV}" > /dev/null
-    /usr/bin/ssh-add;
 }
 
 # Source SSH settings, if applicable
