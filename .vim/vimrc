@@ -30,6 +30,7 @@ noremap! <Down> <Esc>
 noremap! <Left> <Esc>
 noremap! <Right> <Esc>
 
+set nocompatible
 " Always use four spaces for a tab
 " https://stackoverflow.com/a/234578
 filetype plugin indent on
@@ -45,21 +46,6 @@ set expandtab
 autocmd VimLeave * call system("xsel -ib", getreg('+'))
 " This variation is your own
 autocmd VimLeave * call system("xsel -ip", getreg('*'))
-
-" Vundle setup, as described here:
-" https://github.com/VundleVim/Vundle.vim
-set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " You also tried this, but it was very hard to setup:
 " http://clang.llvm.org/docs/ClangFormat.html#vim-integration
