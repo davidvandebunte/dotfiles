@@ -7,3 +7,6 @@
 [submodule ".vim/pack/davidvandebunte/start/ale"]
 	path = .vim/pack/davidvandebunte/start/ale
 	url = https://github.com/w0rp/ale
+[submodule ".vim/pack/davidvandebunte/start/vim-autotag"]
+	path = .vim/pack/davidvandebunte/start/vim-autotag
+	url = https://github.com/craigemery/vim-autotag
