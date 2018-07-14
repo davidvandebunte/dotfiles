@@ -10,6 +10,10 @@ set hidden
 " Highlight search results
 set hlsearch
 
+" Automatically reload files when they change underneath you (for example,
+" when you change your working directory in git).
+set autoread
+
 " Enable mouse support
 set mouse=a
 
