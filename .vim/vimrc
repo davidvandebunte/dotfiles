@@ -93,6 +93,10 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 set tags=./tags;,tags;
 
+" This lets you open more tabs with vim -p
+" https://unix.stackexchange.com/questions/30665/gvim-p-limit-of-opened-tabs
+set tabpagemax=100
+
 " You select keys to map using :help map-which-keys as suggested here:
 " http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
 :map <F2> :set syn=cpp<CR>
