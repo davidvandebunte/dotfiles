@@ -10,3 +10,6 @@
 [submodule ".vim/pack/davidvandebunte/start/vim-autotag"]
 	path = .vim/pack/davidvandebunte/start/vim-autotag
 	url = https://github.com/craigemery/vim-autotag
+[submodule ".vim/pack/davidvandebunte/start/vim-clang-format"]
+	path = .vim/pack/davidvandebunte/start/vim-clang-format
+	url = https://github.com/rhysd/vim-clang-format

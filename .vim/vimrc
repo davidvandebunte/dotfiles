@@ -58,6 +58,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " You also tried this, but it was very hard to setup:
 " http://clang.llvm.org/docs/ClangFormat.html#vim-integration
 "
@@ -75,11 +78,7 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " So, you can’t really use the default clang-format.py installed with ubuntu
 " (it’s written for Python2).
-Plugin 'rhysd/vim-clang-format'
 autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
-
-call vundle#end()            " required
-filetype plugin indent on    " required
 
 " These lines let you quickly navigate between errors:
 " https://github.com/w0rp/ale#faq-navigation
