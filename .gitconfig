@@ -1,10 +1,15 @@
 [alias]
     g = grep -WIn --heading
+
     # GNU find will work regardless of whether you're in a git repository, but
     # it will critically not know to ignore the html, HDR-data, etc. directories.
     f = "!git ls-files | grep -i"
     cp = cherry-pick
+
+    # Commit commands
     ci = commit
+    cian = commit --amend --no-edit
+
     co = checkout
     br = branch
     st = status
