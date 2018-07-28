@@ -10,7 +10,7 @@
 
     # GNU find will work regardless of whether you're in a git repository, but
     # it will critically not know to ignore the html, HDR-data, etc. directories.
-    f = "!git ls-files | grep -i"
+    f = "!git ls-files | grep --ignore-case"
 
     g = grep -WIn --heading
 
@@ -27,6 +27,14 @@
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3 = !"git lg3-specific --all"
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+
+    # Mnemonic: Recursive pull
+    #
+    # You used to "git fetch" then "git rebase" separately so you could review
+    # all changes before integrating them, but I don't think that's a good use
+    # of time. It'd be better to be reading code or learning something in
+    # focused work.
+    rpull = "!git pull --rebase && git submodule update --rebase --recursive"
 
     st = status
 [color]
