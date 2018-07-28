@@ -77,6 +77,22 @@ set tags=./tags;,tags;
 " https://unix.stackexchange.com/questions/30665/gvim-p-limit-of-opened-tabs
 set tabpagemax=100
 
+" The following command was partially inspired by this answer:
+" https://stackoverflow.com/a/21931739/622049
+"
+" You had several problems with early variations on this solution; for
+" example, the Ggrep! provided by vim-fugitive opens search results in a new file
+" in the /tmp folder rather than in a new buffer, so gf didn't work to follow
+" files. Git! had the same problem, so you really couldn't use git-fugitive.
+"
+" The final solution was based more on this answer:
+" https://superuser.com/a/435850/293032
+command -nargs=1 Ggr execute 'enew | silent :0read !git g' <q-args> | set syn=cpp | norm 1G
+
+" The following map was inspired by this question:
+" https://stackoverflow.com/q/21931116/622049
+nnoremap <Leader>f :execute 'Ggr '.expand('<cword>')<cr>
+
 " You select keys to map using :help map-which-keys as suggested here:
 " http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
 :map <F2> :set syn=cpp<CR>
