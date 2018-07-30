@@ -10,6 +10,9 @@ set hidden
 " Highlight search results
 set hlsearch
 
+" Highlight search results as you type in the string
+set incsearch
+
 " Automatically reload files when they change underneath you (for example,
 " when you change your working directory in git).
 set autoread
