@@ -99,3 +99,8 @@ nnoremap <Leader>f :execute 'Ggr '.expand('<cword>')<cr>
 " You select keys to map using :help map-which-keys as suggested here:
 " http://vim.wikia.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2)
 :map <F2> :set syn=cpp<CR>
+
+" This mapping copies the current filename to the clipboard; you may want
+" to use variations on it as well (manually typed). See:
+" https://www.brianstorti.com/vim-registers/
+nmap <F1> :let @+=@%<CR>
