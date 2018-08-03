@@ -16,6 +16,9 @@
 
     # A "quick" view of recent commits, inspired by the command here:
     # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
+    #
+    # All of these aliases are helpful because gitk takes a long time (15 or
+    # so seconds) over ssh (and requires that -X be enabled).
     l = !"git lg1 -20"
 
     # The following aliases were taken from:
