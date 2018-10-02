@@ -10,3 +10,6 @@
 [submodule ".vim/pack/davidvandebunte/start/vim-clang-format"]
 	path = .vim/pack/davidvandebunte/start/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format
+[submodule ".vim/pack/davidvandebunte/start/vim-surround"]
+	path = .vim/pack/davidvandebunte/start/vim-surround
+	url = https://github.com/tpope/vim-surround
