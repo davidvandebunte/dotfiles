@@ -80,3 +80,5 @@
     # This article explains the feature in more detail:
     # https://robots.thoughtbot.com/autosquashing-git-commits
     autosquash = true
+[blame]
+    coloring = highlightRecent
