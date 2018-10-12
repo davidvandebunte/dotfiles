@@ -1,0 +1,2 @@
+# https://askubuntu.com/questions/279254/bash-delete-word-ahead-of-cursor#comment1477127_279945
+"\ew": shell-kill-word
