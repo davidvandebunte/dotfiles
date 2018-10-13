@@ -31,6 +31,7 @@
 # ctags --list-kinds=C++
 --C++-kinds=+p
 
+--fields=+iaS
 # Excludes specific to LocalizationGeometry and HDMA. Add more to make tags
 # generation faster.
 #
@@ -40,6 +41,7 @@
 # https://stackoverflow.com/questions/27314151/how-to-find-offending-format-error-in-vim-tags-file#comment59406290_27314151
 --exclude=GroundTruth
 --exclude=*.json
+--exclude=*.css
 --exclude=*.html
 --exclude=HDR-data
 --exclude=html
@@ -50,3 +52,4 @@
 #
 # You currently prefer the ctags suggestion.
 --extras=+f
+--extras=+q
