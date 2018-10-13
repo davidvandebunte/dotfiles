@@ -37,10 +37,10 @@
 # These are critical to avoid the common problem of tags that are too long for
 # VIM to handle (you'll see an E431 error otherwise):
 # https://groups.google.com/forum/#!topic/vim_dev/vUs9NsuZqGQ
-# https://stackoverflow.com/questions/27314151
+# https://stackoverflow.com/questions/27314151/how-to-find-offending-format-error-in-vim-tags-file#comment59406290_27314151
 --exclude=GroundTruth
---exclude=\*.json
---exclude=\*.html
+--exclude=*.json
+--exclude=*.html
 --exclude=HDR-data
 --exclude=html
 
