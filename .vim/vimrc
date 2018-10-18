@@ -74,6 +74,10 @@ autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" As suggested here:
+" https://dougblack.io/words/a-good-vimrc.html
+set wildmenu
+
 set tags=./tags;,tags;
 
 " This lets you open more tabs with vim -p
