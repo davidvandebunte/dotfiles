@@ -15,6 +15,15 @@ if [ -f $NINJA_BASH_COMPLETION ]; then
     complete -F _ninja_target nj
 fi
 
+# Turn off ^S and ^Q which you don't feel you need in any contexts:
+# https://stackoverflow.com/a/14737844/622049
+if [ -t 0 ]; then
+    stty sane
+    stty stop ''
+    stty start ''
+    stty werase ''
+fi
+
 # The alias suggested in this article:
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
