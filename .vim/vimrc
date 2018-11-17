@@ -89,6 +89,27 @@ set tabpagemax=100
 " https://vi.stackexchange.com/a/12759/17093
 set viminfo='50,<400,s100
 
+" See the middle of the 'alternate-config' tag (:help alternate-config) for
+" information on this setting. These layouts are typical to the code you work
+" with. The first finds the directory of the cpp file associated with the h
+" file you are in; the second finds the directory of the h file associated
+" with the cpp file you are in.
+"
+" These regexes may need work, you built them yourself from:
+" http://www.vimregex.com/
+let g:alternateSearchPath = 'reg:|\(\a\+\)/include/\a\+|\1/src|g|,reg:|\(\a\+\)/src|\1/include/\1|g|'
+
+" Set the first alternate of the h extension to hpp so that as you rotate
+" through alternate files you see the h, hpp, and cpp in order (rather than
+" just going back and forth between the h and cpp).
+let g:alternateExtensions_h = "hpp,cpp"
+
+" See the bottom of the 'alternate-config' tag (:help alternate-config) for
+" information on this setting. You don't want alternate to create new files
+" for you; it seems like it is almost always going to create the new .h or
+" .cpp file in the wrong place.
+let g:alternateNoDefaultAlternate=1
+
 " The following command was partially inspired by this answer:
 " https://stackoverflow.com/a/21931739/622049
 "
