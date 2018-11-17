@@ -74,6 +74,15 @@ autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" The following are mostly borrowed from the "Vimrc Example" on this page:
+" https://github.com/rhysd/vim-clang-format
+autocmd FileType h,hpp,cpp nnoremap <Leader>cf :ClangFormat<CR>
+autocmd FileType h,hpp,cpp vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" You've installed vim-operator-user to have this recommended functionality,
+" but you don't really understand the advantages of it yet. For now you're
+" just using the other commands.
+autocmd FileType h,hpp,cpp map <buffer><Leader>x <Plug>(operator-clang-format)
+
 " As suggested here:
 " https://dougblack.io/words/a-good-vimrc.html
 set wildmenu
