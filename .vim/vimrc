@@ -84,6 +84,11 @@ set tags=./tags;,tags;
 " https://unix.stackexchange.com/questions/30665/gvim-p-limit-of-opened-tabs
 set tabpagemax=100
 
+" You were seeing registers get truncated when you closed and reopened VIM.
+" See this SE answer for details:
+" https://vi.stackexchange.com/a/12759/17093
+set viminfo='50,<400,s100
+
 " The following command was partially inspired by this answer:
 " https://stackoverflow.com/a/21931739/622049
 "
