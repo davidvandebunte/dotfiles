@@ -43,6 +43,9 @@
 --exclude=*.json
 --exclude=*.css
 --exclude=*.html
+--exclude=site-packages
+# We don't need duplicate symbols from both the Debug and Release directories
+--exclude=Debug
 --exclude=HDR-data
 --exclude=html
 
