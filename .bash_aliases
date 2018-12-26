@@ -28,6 +28,13 @@ fi
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# Quickly switch to the root of the current git repository:
+# https://stackoverflow.com/questions/957928/is-there-a-way-to-get-the-git-root-directory-in-one-command/23442470#23442470
+#
+# You took the name gcd from this comment:
+# https://stackoverflow.com/questions/957928/is-there-a-way-to-get-the-git-root-directory-in-one-command/23442470#comment26303681_957928
+alias gcd='cd $(git rev-parse --show-toplevel)'
+
 # The idea to use tmuxinator (to restore tmux layouts) came from here:
 # https://blog.bugsnag.com/benefits-of-using-tmux/
 #
