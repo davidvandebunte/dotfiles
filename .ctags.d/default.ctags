@@ -44,6 +44,8 @@
 --exclude=*.css
 --exclude=*.html
 --exclude=site-packages
+--exclude=target
+--exclude=private
 # We don't need duplicate symbols from both the Debug and Release directories
 --exclude=Debug
 --exclude=HDR-data
