@@ -61,6 +61,10 @@
     # Don't prompt before each invocation of the diff tool:
     # https://git-scm.com/docs/git-config#git-config-difftoolprompt
     prompt = false
+[gitreview]
+    # Search "git config --global gitreview.remote origin" on this page:
+    # https://nofluffjuststuff.com/magazine/2016/04/understanding_and_applying_gerrit_part_3_gerrit_submit_types_and_git_review
+    remote = origin
 [include]
     path = ~/.gitconfig_local
 [pager]
