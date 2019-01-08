@@ -46,10 +46,12 @@
 --exclude=site-packages
 --exclude=target
 --exclude=private
-# We don't need duplicate symbols from both the Debug and Release directories
---exclude=Debug
 --exclude=HDR-data
 --exclude=html
+
+# Only find symbols in the Release directory.
+--exclude=Debug
+--exclude=RelWithDebInfo
 
 # You're often looking for a way to switch to the header file from the source
 # file in VIM. See suggestions here:
