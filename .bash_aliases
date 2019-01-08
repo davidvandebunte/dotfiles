@@ -11,8 +11,10 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-
 NINJA_BASH_COMPLETION="/usr/share/bash-completion/completions/ninja"
 if [ -f $NINJA_BASH_COMPLETION ]; then
     source $NINJA_BASH_COMPLETION
-    alias nj="nice -n 2 ninja -k 100 -j20"
+    alias nj="nice -n 4 ninja -k100 -l16 -j20"
+    alias njd="ionice -c 3 nice -n 4 ninja -k100 -l14 -j20"
     complete -F _ninja_target nj
+    complete -F _ninja_target njd
 fi
 
 # Turn off ^S and ^Q which you don't feel you need in any contexts:
