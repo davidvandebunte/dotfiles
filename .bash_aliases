@@ -17,6 +17,10 @@ if [ -f $NINJA_BASH_COMPLETION ]; then
     complete -F _ninja_target njd
 fi
 
+# See the suggested NINJA_STATUS here:
+# https://ninja-build.org/manual.html#_environment_variables
+export NINJA_STATUS="[%u/%r/%f] "
+
 # Turn off ^S and ^Q which you don't feel you need in any contexts:
 # https://stackoverflow.com/a/14737844/622049
 if [ -t 0 ]; then
