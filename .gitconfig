@@ -12,7 +12,7 @@
     # it will critically not know to ignore the html, HDR-data, etc. directories.
     f = "!git ls-files | grep --ignore-case"
 
-    g = grep -WIn --heading
+    g = grep -WEIn --heading
 
     # A "quick" view of recent commits, inspired by the command here:
     # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
