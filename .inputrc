@@ -1,5 +1,7 @@
 # https://askubuntu.com/questions/279254/bash-delete-word-ahead-of-cursor#comment1477127_279945
+$if Bash
 "\ew": shell-kill-word
+$endif
 
 # https://unix.stackexchange.com/a/197016/233125
 "\eOD":""
