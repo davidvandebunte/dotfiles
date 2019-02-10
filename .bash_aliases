@@ -50,6 +50,10 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+# As suggested here:
+# https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
+export RWO_JNI_BUILD_DIR=/home/vandebun/wa/Release
+
 # The following lines are part of tmuxinator setup:
 # https://github.com/tmuxinator/tmuxinator
 export EDITOR='vim'
