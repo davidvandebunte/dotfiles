@@ -19,3 +19,6 @@
 [submodule "Boost-Pretty-Printer"]
 	path = Boost-Pretty-Printer
 	url = https://github.com/ruediger/Boost-Pretty-Printer
+[submodule ".vim/pack/davidvandebunte/start/vim-airline"]
+	path = .vim/pack/davidvandebunte/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
