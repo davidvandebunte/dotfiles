@@ -74,6 +74,106 @@ autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" The default CPP compile options are the same for clang and gcc:
+" https://github.com/w0rp/ale/blob/73ca1e71918a0b50b7bbcbed91857c3618ad93cc/doc/ale-cpp.txt
+"
+" From that link, they are:
+" -std=c++14 -Wall
+"
+" We can't leave these as the default because we compile with c++17, and
+" adding c++14 to the end of the compile command line overrides any previous
+" c++17 switch. To see how these variables are added to the end of the
+" command that is pulled from compile_commands.json, see:
+" https://github.com/w0rp/ale/blob/73ca1e71918a0b50b7bbcbed91857c3618ad93cc/ale_linters/cpp/gcc.vim
+" https://github.com/w0rp/ale/blob/73ca1e71918a0b50b7bbcbed91857c3618ad93cc/ale_linters/cpp/clang.vim
+let g:ale_cpp_gcc_options = '-std=c++1z -Wall -Wextra'
+let g:ale_cpp_clang_options = '-std=c++1z -Wall -Wextra'
+
+" By default, read compile arguments from compile_commands.json:
+" https://github.com/w0rp/ale/blob/73ca1e71918a0b50b7bbcbed91857c3618ad93cc/doc/ale-c.txt
+"
+" As part of setting up clang tooling (the clang-tools Ubuntu package) so you
+" can use tools like clang-tidy and clang-check from the command line, you have
+" to create a symlink to the compile_commands.json in a build directory from
+" a source directory or a directory above the source directory:
+" http://clang.llvm.org/docs/HowToSetupToolingForLLVM.html
+"
+" Because you are usually going to be doing that anyways, you aren't bothering
+" to set g:ale_c_build_dir_names (we should be able to find the compile commands
+" JSON without it).
+let g:ale_c_parse_compile_commands = 1
+
+" Use ccache to cache the work of gcc and clang compilers.
+"
+" Unfortunately ccache doesn't help you when you have errors in compilation;
+" this will only help you confirm that files compiled correctly again faster.
+let g:ale_cpp_gcc_executable = "/usr/lib/ccache/gcc"
+let g:ale_cpp_clang_executable = "/usr/lib/ccache/clang++"
+
+" See the documentation here on g:ale_linters:
+" https://github.com/w0rp/ale/blob/73ca1e71918a0b50b7bbcbed91857c3618ad93cc/doc/ale.txt#L12
+"
+" And notice the line:
+" 'All linters will be run for unspecified filetypes.'
+"
+" Since the default dictionary in that documentation does not include C++, all
+" C++ linters are run by default. Unfortunately you have many C++ tools
+" installed and when ALE tries to use them as linters you get too many false
+" positive errors from all the linters you haven't worked on. List of
+" installed linters to fix:
+" clangd
+" cppcheck
+"
+" Limit C++ linters to only the linters you've tested:
+let g:ale_linters = {'cpp' : ['clang', 'clangcheck', 'clangtidy', 'gcc']}
+
+" If you see a clang-tidy problem a lot you want to automatically fix, see the
+" targets in:
+" HDMA/cmake/clang_tidy.cmake
+" (create a new story for every *individual* check you want to add)
+"
+" List clang-tidy checks in the same order they are listed here (alphabetical):
+" https://clang.llvm.org/extra/clang-tidy/checks/list.html
+let g:ale_cpp_clangtidy_checks = []
+call add(g:ale_cpp_clangtidy_checks, 'bugprone-*')
+call add(g:ale_cpp_clangtidy_checks, 'cppcoreguidelines-*')
+call add(g:ale_cpp_clangtidy_checks, 'google-runtime-int')
+call add(g:ale_cpp_clangtidy_checks, 'llvm-*,-llvm-include-order')
+call add(g:ale_cpp_clangtidy_checks, 'misc-*')
+call add(g:ale_cpp_clangtidy_checks, 'modernize-*')
+call add(g:ale_cpp_clangtidy_checks, 'performance-*')
+call add(g:ale_cpp_clangtidy_checks, 'readability-*')
+
+" You were running into this check with LOG_INFO() and many other commands.
+"
+" Perhaps you should ignore CPP core guidelines suggestions that require the GSL:
+" https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md#S-gsl
+" (until you or someone else evaluates whether we should use it)
+"
+" You also tested that you could work around this issue with a static_cast,
+" but you didn't want to go through the trouble of getting that patch into our
+" code:
+" https://github.com/KjellKod/g3log/issues/192
+call add(g:ale_cpp_clangtidy_checks, '-cppcoreguidelines-pro-bounds-array-to-pointer-decay')
+
+" These checks all have to be disabled because of Google Test (you are often
+" editing Test.*.cpp files). Long-term, the upstream should be fixed to ignore
+" or fix these issues. You've only found this effort on their part:
+" https://github.com/google/googletest/pull/903
+"
+" EXPECT_EQ from google test emits this error:
+" do not call c-style vararg functions [cppcoreguidelines-pro-type-vararg]
+call add(g:ale_cpp_clangtidy_checks, '-cppcoreguidelines-pro-type-vararg')
+"
+" The TEST/GTEST_TEST macros emit these errors:
+" use '= delete' to prohibit calling of a special member function [modernize-use-equals-delete]
+" initializing non-owner argument of type 'internal::TestFactoryBase *' with a newly created 'gsl::owner<>' [cppcoreguidelines-owning-memory]
+" class 'PolylineFeatureConsolidator_constructor_Test' defines a copy constructor and a copy assignment..., a move constructor or a move assignment operator [cppcoreguidelines-special-member-functions]
+call add(g:ale_cpp_clangtidy_checks, '-modernize-use-equals-delete,-cppcoreguidelines-owning-memory,-cppcoreguidelines-special-member-functions')
+
+" To debug your full list of checks.
+"echo g:ale_cpp_clangtidy_checks
+
 " The following are mostly borrowed from the "Vimrc Example" on this page:
 " https://github.com/rhysd/vim-clang-format
 autocmd FileType h,hpp,cpp nnoremap <Leader>cf :ClangFormat<CR>
