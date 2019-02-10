@@ -113,6 +113,10 @@ let g:alternateSearchPath = 'reg:|\(\a\+\)/include/\a\+|\1/src|g|,reg:|\(\a\+\)/
 " just going back and forth between the h and cpp).
 let g:alternateExtensions_h = "hpp,cpp"
 
+" When there is only an h and an hpp file (e.g. ObservationArtifact) you want
+" to cycle between them:
+let g:alternateExtensions_hpp = "cpp,c,h"
+
 " See the bottom of the 'alternate-config' tag (:help alternate-config) for
 " information on this setting. You don't want alternate to create new files
 " for you; it seems like it is almost always going to create the new .h or
