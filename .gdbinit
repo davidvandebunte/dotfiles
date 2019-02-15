@@ -1,3 +1,10 @@
+# https://sourceware.org/gdb/onlinedocs/gdb/Command-History.html
+# https://stackoverflow.com/a/3176802/622049
+set history save on
+set history size 128
+set history remove-duplicates 128
+set history expansion on
+
 python
 import sys
 sys.path.insert(1, '/home/vandebun/Boost-Pretty-Printer')
