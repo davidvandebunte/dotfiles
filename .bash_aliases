@@ -30,6 +30,13 @@ if [ -t 0 ]; then
     stty werase ''
 fi
 
+# Timebox everything you do.
+function next_task { \
+    sleep $1 && \
+    notify-send --urgency critical "Next task!" && \
+    watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg; \
+}
+
 # The alias suggested in this article:
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
