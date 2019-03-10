@@ -33,6 +33,10 @@ noremap! <Down> <Esc>
 noremap! <Left> <Esc>
 noremap! <Right> <Esc>
 
+" As suggested here:
+" https://stackoverflow.com/questions/14465383/how-to-navigate-multiple-ctags-matches-in-vim/42078499#42078499
+nnoremap <C-]> g<C-]>
+
 set nocompatible
 " Always use four spaces for a tab
 " https://stackoverflow.com/a/234578
