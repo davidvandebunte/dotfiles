@@ -59,7 +59,7 @@ fi
 
 # As suggested here:
 # https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
-export RWO_JNI_BUILD_DIR=/home/vandebun/wa/Release
+export RWO_JNI_BUILD_DIR=/home/vandebun/sdb/rwoj/RelWithDebInfo
 
 # The following lines are part of tmuxinator setup:
 # https://github.com/tmuxinator/tmuxinator
