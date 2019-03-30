@@ -28,3 +28,6 @@
 [submodule ".vim/pack/davidvandebunte/start/alternate-lite"]
 	path = .vim/pack/davidvandebunte/start/alternate-lite
 	url = git@github.com:LucHermitte/alternate-lite.git
+[submodule ".vim/pack/davidvandebunte/start/vim-gitgutter"]
+	path = .vim/pack/davidvandebunte/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter

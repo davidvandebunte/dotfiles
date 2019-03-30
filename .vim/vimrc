@@ -73,6 +73,10 @@ autocmd VimLeave * call system("xsel -ip", getreg('*'))
 " (it’s written for Python2).
 autocmd FileType c,cpp,hpp,h ClangFormatAutoEnable
 
+" As suggested here:
+" https://github.com/airblade/vim-gitgutter#getting-started
+set updatetime=100
+
 " These lines let you quickly navigate between errors:
 " https://github.com/w0rp/ale#faq-navigation
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
