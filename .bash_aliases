@@ -32,7 +32,8 @@ fi
 
 # Timebox everything you do.
 function next_task { \
-    sleep $1 && \
+    date
+    sleep "$1" && \
     notify-send --urgency critical "Next task!" && \
     watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg; \
 }
