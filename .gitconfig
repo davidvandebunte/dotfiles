@@ -40,6 +40,8 @@
     rpull = "!git pull --rebase && git submodule update --rebase --recursive"
 
     st = status
+[blame]
+    coloring = highlightRecent
 [color]
     # Since we're using VIM as the pager for git grep, we don't want ANSI escape
     # characters intermixed in the output.
@@ -84,5 +86,3 @@
     # This article explains the feature in more detail:
     # https://robots.thoughtbot.com/autosquashing-git-commits
     autosquash = true
-[blame]
-    coloring = highlightRecent
