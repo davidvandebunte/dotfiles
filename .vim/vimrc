@@ -40,6 +40,11 @@ noremap! <Down> <Esc>
 noremap! <Left> <Esc>
 noremap! <Right> <Esc>
 
+" Disable the backspace and delete keys as suggested here:
+" https://stackoverflow.com/a/13741562/622049
+inoremap <BS> <Nop>
+inoremap <Del> <Nop>
+
 " As suggested here:
 " https://stackoverflow.com/questions/14465383/how-to-navigate-multiple-ctags-matches-in-vim/42078499#42078499
 nnoremap <C-]> g<C-]>
