@@ -12,3 +12,8 @@ $endif
 "\e[A":""
 "\eOB":""
 "\e[B":""
+
+# Avoid backspace because it's far from the home row. You've got a bad habit
+# where you move forward an extra character and the hit backspace now.
+# https://superuser.com/a/641116
+"\C-?":""
