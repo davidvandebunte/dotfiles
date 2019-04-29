@@ -33,6 +33,10 @@ fi
 # Timebox everything you do.
 function next_task { \
     date
+    faketime -f +"$1" date
+    # TODO: Print how long you actually worked by catching the Ctrl-C signal (SIGINT?). Also how
+    # much time you have left, in case you're just taking a break or you want to see how much time
+    # you saved. Perhaps convert this all to Python.
     sleep "$1" && \
     notify-send --urgency critical "Next task!" && \
     watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg; \
