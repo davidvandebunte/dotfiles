@@ -69,6 +69,12 @@
     remote = origin
 [include]
     path = ~/.gitconfig_local
+[merge]
+    # https://stackoverflow.com/a/163659/622049
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt = false
 [pager]
     # You use VIM as a your "git grep" pager so that you have CPP highlighting
     # (something git will never be able to do).
