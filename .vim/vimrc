@@ -27,6 +27,11 @@ highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Re
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
 
+" When you land on a parentheses it can sometimes seem like your
+" cursor jumped somewhere it did not.
+" https://stackoverflow.com/a/10746829/622049
+hi MatchParen cterm=bold ctermbg=none ctermfg=magenta
+
 " Disable the arrow keys in normal mode (leave in normal mode)
 noremap <Up> <NOP>
 noremap <Down> <NOP>
