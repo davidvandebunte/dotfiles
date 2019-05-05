@@ -24,10 +24,10 @@
 	url = https://github.com/vim-airline/vim-airline.git
 [submodule ".vim/pack/davidvandebunte/start/lh-vim-lib"]
 	path = .vim/pack/davidvandebunte/start/lh-vim-lib
-	url = git@github.com:LucHermitte/lh-vim-lib.git
+	url = https://github.com/LucHermitte/lh-vim-lib
 [submodule ".vim/pack/davidvandebunte/start/alternate-lite"]
 	path = .vim/pack/davidvandebunte/start/alternate-lite
-	url = git@github.com:LucHermitte/alternate-lite.git
+	url = https://github.com/LucHermitte/alternate-lite
 [submodule ".vim/pack/davidvandebunte/start/vim-gitgutter"]
 	path = .vim/pack/davidvandebunte/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
