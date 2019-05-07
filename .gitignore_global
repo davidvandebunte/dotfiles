@@ -2,3 +2,6 @@ tags
 *.idea
 *.iml
 *.swp
+
+# https://stackoverflow.com/a/39997938
+.ipynb_checkpoints/
