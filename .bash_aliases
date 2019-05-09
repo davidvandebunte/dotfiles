@@ -31,7 +31,7 @@ if [ -t 0 ]; then
 fi
 
 # Timebox everything you do.
-function next_task { \
+function nt { \
     date
     faketime -f +"$1" date
     # TODO: Print how long you actually worked by catching the Ctrl-C signal (SIGINT?). Also how
