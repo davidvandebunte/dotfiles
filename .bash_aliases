@@ -42,9 +42,9 @@ function next_task { \
     watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg; \
 }
 
-# The alias suggested in this article:
+# Similar to the "config" alias suggested in this article:
 # https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Quickly switch to the root of the current git repository:
 # https://stackoverflow.com/questions/957928/is-there-a-way-to-get-the-git-root-directory-in-one-command/23442470#23442470
