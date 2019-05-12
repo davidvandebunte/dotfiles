@@ -247,3 +247,10 @@ nnoremap <Leader>f :execute 'Ggr '.expand('<cword>')<cr>
 " to use variations on it as well (manually typed). See:
 " https://www.brianstorti.com/vim-registers/
 nmap <F1> :let @+=@%<CR>
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
