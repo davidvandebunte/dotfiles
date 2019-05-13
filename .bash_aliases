@@ -66,6 +66,19 @@ if [ -f ~/.bash_personal ]; then
     . ~/.bash_personal
 fi
 
+dfr() {
+    docker run \
+        --rm \
+        --interactive --tty \
+        --env "TERM=xterm-256color" \
+        --env DISPLAY \
+        --volume /tmp/.X11-unix:/tmp/.X11-unix \
+        # Example of mapping PWD to PWD:
+        # https://docs.docker.com/engine/reference/commandline/run/#mount-volume--v---read-only
+        --volume "$PWD":"$PWD" \
+        --workdir "$PWD" "$@"
+}
+
 # As suggested here:
 # https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
 export RWO_JNI_BUILD_DIR=/home/vandebun/sdb/rwoj/RelWithDebInfo
