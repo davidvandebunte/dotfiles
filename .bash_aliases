@@ -74,6 +74,7 @@ dfr() {
         --interactive --tty \
         --env "TERM=xterm-256color" \
         --env DISPLAY \
+        --volume $HOME/.viminfo:/home/internal/.viminfo \
         --volume /tmp/.X11-unix:/tmp/.X11-unix \
         --volume "$PWD":"$PWD" \
         --workdir "$PWD" "$@"
