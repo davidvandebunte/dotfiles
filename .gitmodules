@@ -31,3 +31,6 @@
 [submodule ".vim/pack/davidvandebunte/start/vim-gitgutter"]
 	path = .vim/pack/davidvandebunte/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule ".vim/pack/davidvandebunte/start/vim-terraform"]
+	path = .vim/pack/davidvandebunte/start/vim-terraform
+	url = https://github.com/hashivim/vim-terraform
