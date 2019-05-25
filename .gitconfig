@@ -8,6 +8,9 @@
     co = checkout
     cp = cherry-pick
 
+    # https://stackoverflow.com/questions/3713765/viewing-all-git-diffs-with-vimdiff
+    df = difftool
+
     # GNU find will work regardless of whether you're in a git repository, but
     # it will critically not know to ignore the html, HDR-data, etc. directories.
     f = "!git ls-files | grep --ignore-case"
