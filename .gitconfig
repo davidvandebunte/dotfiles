@@ -15,7 +15,7 @@
     # it will critically not know to ignore the html, HDR-data, etc. directories.
     f = "!git ls-files | grep --ignore-case"
 
-    g = grep -WEIn --heading
+    g = grep --no-color -WEIn --heading
 
     # A "quick" view of recent commits, inspired by the command here:
     # https://github.com/mathiasbynens/dotfiles/blob/master/.gitconfig
@@ -45,10 +45,6 @@
     st = status
 [blame]
     coloring = highlightRecent
-[color]
-    # Since we're using VIM as the pager for git grep, we don't want ANSI escape
-    # characters intermixed in the output.
-    grep = false
 [core]
     # Use vim to edit commit messages:
     # https://git-scm.com/docs/git-config#git-config-coreeditor
