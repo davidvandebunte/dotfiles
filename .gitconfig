@@ -74,6 +74,8 @@
     conflictstyle = diff3
 [mergetool]
     prompt = false
+    # https://stackoverflow.com/questions/1251681/git-mergetool-generates-unwanted-orig-files
+    keepBackup = false
 [pager]
     # You use VIM as a your "git grep" pager so that you have CPP highlighting
     # (something git will never be able to do).
