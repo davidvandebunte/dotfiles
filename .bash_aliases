@@ -62,6 +62,9 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+# https://askubuntu.com/questions/391082/how-to-see-time-stamps-in-bash-history/391087#comment1723728_391087
+HISTTIMEFORMAT="%F %T "
+
 if [ -f ~/.bash_personal ]; then
     . ~/.bash_personal
 fi
