@@ -52,16 +52,23 @@
     # Use custom `.gitignore`
     excludesfile = ~/.gitignore_global
 [diff]
-    # You're using meld as your git difftool:
-    # https://git-scm.com/docs/git-config#git-config-difftool
-    #
     # See:
     # https://git-scm.com/docs/git-difftool
-    tool = meld
+    #
+    # Prefer difftool to diff to get better colors.
+    # Prefer difftool to remote tools like GitLab.
+    #
+    # Prefer vimdiff to meld so:
+    #   - You can use your keyboard to navigate diffs.
+    #   - You can use difftool over ssh.
+    tool = vimdiff
 [difftool]
-    # Don't prompt before each invocation of the diff tool:
+    # Prompt before each invocation of the diff tool:
     # https://git-scm.com/docs/git-config#git-config-difftoolprompt
-    prompt = false
+    #
+    # It's harder to get out of vimdiff (with :wq i.e. 3 characters) than meld. You only
+    # have to type one letter with this system.
+    prompt = true
 [gitreview]
     # Search "git config --global gitreview.remote origin" on this page:
     # https://nofluffjuststuff.com/magazine/2016/04/understanding_and_applying_gerrit_part_3_gerrit_submit_types_and_git_review
