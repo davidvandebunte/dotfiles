@@ -37,9 +37,11 @@ function nt { \
     # TODO: Print how long you actually worked by catching the Ctrl-C signal (SIGINT?). Also how
     # much time you have left, in case you're just taking a break or you want to see how much time
     # you saved. Perhaps convert this all to Python.
-    sleep "$1" && \
-    notify-send --urgency critical "Next task!" && \
-    watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg; \
+    sleep "$1"
+    if [ -n "$2" ]; then
+        zenity --warning --title="New timebox!" --text="$2" &
+    fi
+    watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg
 }
 
 # Similar to the "config" alias suggested in this article:
