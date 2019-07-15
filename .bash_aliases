@@ -85,6 +85,11 @@ dfr() {
         --workdir "$PWD" "$@"
 }
 
+# TODO: This and dfr should really move to the vim-environment repository.
+dvim() {
+    dfr vim-env
+}
+
 # As suggested here:
 # https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
 export RWO_JNI_BUILD_DIR=/home/vandebun/sdb/rwoj/RelWithDebInfo
