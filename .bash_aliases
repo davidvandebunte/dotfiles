@@ -38,9 +38,12 @@ function nt { \
     # much time you have left, in case you're just taking a break or you want to see how much time
     # you saved. Perhaps convert this all to Python.
     sleep "$1"
-    if [ -n "$2" ]; then
-        zenity --warning --title="New timebox!" --text="$2" &
+    local WARNING_TEXT
+    WARNING_TEXT="$2"
+    if [ -z "$WARNING_TEXT" ]; then
+        WARNING_TEXT="Out of time!"
     fi
+    zenity --warning --title="New timebox!" --text="$WARNING_TEXT" &
     watch paplay /usr/share/sounds/ubuntu/stereo/message.ogg
 }
 
