@@ -9,6 +9,8 @@ set hidden
 
 " Highlight search results
 set hlsearch
+hi Search ctermbg=yellow
+hi Search ctermfg=red
 
 " Highlight search results as you type in the string
 set incsearch
