@@ -205,6 +205,14 @@ call add(g:ale_cpp_clangtidy_checks, '-modernize-use-equals-delete,-cppcoreguide
 " To debug your full list of checks.
 "echo g:ale_cpp_clangtidy_checks
 
+" See :h ale-fix
+" Comment out the ale_fix_on_save if you ever need to edit other .py files.
+let g:ale_python_yapf_use_global = 1
+let g:ale_fixers = {'python' : ['yapf']}
+let g:ale_fix_on_save = 1
+" https://freshman.tech/vim-javascript/
+nmap <F6> <Plug>(ale_fix)
+
 " The following are mostly borrowed from the "Vimrc Example" on this page:
 " https://github.com/rhysd/vim-clang-format
 autocmd FileType h,hpp,cpp nnoremap <Leader>cf :ClangFormat<CR>
