@@ -156,7 +156,7 @@ let g:ale_cpp_clang_executable = "/usr/lib/ccache/clang++"
 " cppcheck
 "
 " Limit C++ linters to only the linters you've tested:
-let g:ale_linters = {'cpp' : ['clang', 'clangcheck', 'clangtidy', 'gcc']}
+let g:ale_linters = {'cpp' : ['clang', 'clangcheck', 'clangtidy', 'gcc'], 'scala' : ['scalac', 'scalastyle']}
 
 " If you see a clang-tidy problem a lot you want to automatically fix, see the
 " targets in:
@@ -208,7 +208,7 @@ call add(g:ale_cpp_clangtidy_checks, '-modernize-use-equals-delete,-cppcoreguide
 " See :h ale-fix
 " Comment out the ale_fix_on_save if you ever need to edit other .py files.
 let g:ale_python_yapf_use_global = 1
-let g:ale_fixers = {'python' : ['yapf']}
+let g:ale_fixers = {'python' : ['yapf'], 'scala' : ['scalafmt']}
 let g:ale_fix_on_save = 1
 " https://freshman.tech/vim-javascript/
 nmap <F6> <Plug>(ale_fix)
