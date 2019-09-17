@@ -156,7 +156,11 @@ let g:ale_cpp_clang_executable = "/usr/lib/ccache/clang++"
 " cppcheck
 "
 " Limit C++ linters to only the linters you've tested:
-let g:ale_linters = {'cpp' : ['clang', 'clangcheck', 'clangtidy', 'gcc'], 'scala' : ['scalac', 'scalastyle']}
+let g:ale_linters = {
+\   'cpp' : ['clang', 'clangcheck', 'clangtidy', 'gcc'],
+\   'scala' : ['scalac', 'scalastyle'],
+\   'python' : ['autopep8', 'pylint', 'pyflakes', 'pycodestyle', 'flake8', 'yapf']
+\}
 
 " If you see a clang-tidy problem a lot you want to automatically fix, see the
 " targets in:
