@@ -21,7 +21,13 @@ fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+    # Append ~/.local/bin to the end of the path rather than the front. See:
+    # https://github.com/conda/conda/issues/7173
+    #
+    # When you try to activate a conda environment, this being on the path
+    # makes your terminal find --user python binaries before conda-installed
+    # binaries.
+    PATH="$PATH:$HOME/.local/bin"
 fi
 
 # The following logic comes from:
