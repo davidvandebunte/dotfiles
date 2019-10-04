@@ -64,6 +64,31 @@ export PATH=/usr/local/cuda/bin:${PATH}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export CUDA_HOME=/usr/local/cuda
 
+# Define environment variables within .profile rather than .bashrc because you
+# want the variables to be defined regardless of whether you're running in bash
+# (sh, zsh, tools launched with an icon or menu or keyboard shortcut).
+#
+# You also don't want inconsistency between shells; which were loaded before and
+# after you changed .bashrc? You need to restart to make everything consistent,
+# and at that point everything should go into .profile rather than .bashrc.
+#
+# See comments on environment variables here:
+# https://superuser.com/a/183980/293032
+# https://superuser.com/questions/789448/choosing-between-bashrc-profile-bash-profile-etc/789465#comment1028990_789465
+
+# See:
+# https://www.nrmitchi.com/2019/01/managing-kubeconfig-files/
+#
+# Sets the KUBECONFIG environment variable to a dynamic concatentation of everything
+# under ~/.kube/configs/*
+# Does NOT overwrite KUBECONFIG if the KUBECONFIG_MANUAL env var is set
+if [ -d ~/.kube/configs ]; then
+  if [ -z "$KUBECONFIG_MANUAL" ]; then
+    KUBECONFIG=~/.kube/config$(find ~/.kube/configs -type f 2>/dev/null | xargs -I % echo -n ":%")
+	export KUBECONFIG
+  fi
+fi
+
 # You include .bashrc after the PATH is completely set up so you can set
 # aliases and define functions using the binaries from the modified PATH (e.g.
 # kubectl autocompletion).
