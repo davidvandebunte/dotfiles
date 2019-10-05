@@ -20,6 +20,15 @@ if [ -f $NINJA_BASH_COMPLETION ]; then
     complete -F _ninja_target njd
 fi
 
+alias vi=nvim
+
+# For kubectl auto completion:
+# https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+source <(kubectl completion bash)
+
+alias k=kubectl
+complete -F __start_kubectl k
+
 # See the suggested NINJA_STATUS here:
 # https://ninja-build.org/manual.html#_environment_variables
 export NINJA_STATUS="[%u/%r/%f] "
