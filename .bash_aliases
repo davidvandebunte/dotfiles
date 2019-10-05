@@ -29,6 +29,9 @@ source <(kubectl completion bash)
 alias k=kubectl
 complete -F __start_kubectl k
 
+# Argo autocompletion
+source <(argo completion bash)
+
 # Turn off ^S and ^Q which you don't feel you need in any contexts:
 # https://stackoverflow.com/a/14737844/622049
 if [ -t 0 ]; then
