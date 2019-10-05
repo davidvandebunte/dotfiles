@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+echo "Sourcing .bash_aliases"
+
 # See:
 # https://docs.google.com/document/d/1vQPrNDdwNSWZHHZF7cDg7bwpjtAAzxykyp5-TM6UrSI/edit
 alias nmk="nice -n 2 make -k -j20"
@@ -57,15 +60,6 @@ alias dotf='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # You took the name gcd from this comment:
 # https://stackoverflow.com/questions/957928/is-there-a-way-to-get-the-git-root-directory-in-one-command/23442470#comment26303681_957928
 alias gcd='cd $(git rev-parse --show-toplevel)'
-
-# The idea to use tmuxinator (to restore tmux layouts) came from here:
-# https://blog.bugsnag.com/benefits-of-using-tmux/
-#
-# You are installing tmux locally using this approach:
-# https://stackoverflow.com/a/18294746/622049
-if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
-fi
 
 # https://askubuntu.com/questions/391082/how-to-see-time-stamps-in-bash-history/391087#comment1723728_391087
 HISTTIMEFORMAT="%F %T "
