@@ -29,10 +29,6 @@ source <(kubectl completion bash)
 alias k=kubectl
 complete -F __start_kubectl k
 
-# See the suggested NINJA_STATUS here:
-# https://ninja-build.org/manual.html#_environment_variables
-export NINJA_STATUS="[%u/%r/%f] "
-
 # Turn off ^S and ^Q which you don't feel you need in any contexts:
 # https://stackoverflow.com/a/14737844/622049
 if [ -t 0 ]; then
@@ -96,11 +92,6 @@ dvim() {
     dfr vim-env
 }
 
-# As suggested here:
-# https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
-export RWO_JNI_BUILD_DIR=/home/vandebun/sdb/rwoj/RelWithDebInfo
-
-# The following lines are part of tmuxinator setup:
+# The following line is part of tmuxinator setup:
 # https://github.com/tmuxinator/tmuxinator
-export EDITOR='vim'
 source ~/.tmuxinator.bash

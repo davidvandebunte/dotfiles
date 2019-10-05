@@ -89,6 +89,16 @@ if [ -d ~/.kube/configs ]; then
   fi
 fi
 
+export EDITOR='vim'
+
+# As suggested here:
+# https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
+export RWO_JNI_BUILD_DIR=/home/vandebun/sdb/rwoj/RelWithDebInfo
+
+# See the suggested NINJA_STATUS here:
+# https://ninja-build.org/manual.html#_environment_variables
+export NINJA_STATUS="[%u/%r/%f] "
+
 # The following logic comes from:
 # https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 #
