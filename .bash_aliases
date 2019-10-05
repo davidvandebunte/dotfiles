@@ -73,8 +73,8 @@ alias gcd='cd $(git rev-parse --show-toplevel)'
 # https://askubuntu.com/questions/391082/how-to-see-time-stamps-in-bash-history/391087#comment1723728_391087
 HISTTIMEFORMAT="%F %T "
 
-if [ -f ~/.bash_personal ]; then
-    . ~/.bash_personal
+if [ -f ~/.bash_personal_aliases ]; then
+    source ~/.bash_personal_aliases
 fi
 
 dfr() {
