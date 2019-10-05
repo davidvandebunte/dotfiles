@@ -20,6 +20,9 @@ echo "Sourcing .bash_profile"
 # running .profile twice when you ssh into your machine and then start tmux
 # (leading to a PATH that has been doubly modified). See comments here:
 # https://unix.stackexchange.com/a/61788/233125
+#
+# Reasoning behind the login shell default here:
+# https://superuser.com/a/970847/293032
 if [ -z "$TMUX" ]; then
     if [ -r ~/.profile ]; then
         # shellcheck source=/home/vandebun/.profile
