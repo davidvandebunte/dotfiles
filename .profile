@@ -89,23 +89,6 @@ if [ -d ~/.kube/configs ]; then
   fi
 fi
 
-# You include .bashrc after the PATH is completely set up so you can set
-# aliases and define functions using the binaries from the modified PATH (e.g.
-# kubectl autocompletion).
-#
-# Aliases are not propagated between shells like environment variables, so
-# they need to stay in .bashrc:
-# https://serverfault.com/a/261807/465399
-#
-# The logic in this file (such as checking the BASH_VERSION) makes me think
-# you got it from a .profile file originally (not a .bash_profile file).
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
 # The following logic comes from:
 # https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login
 #
