@@ -6,6 +6,9 @@ echo "Sourcing .bash_aliases"
 alias nmk="nice -n 2 make -k -j20"
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" nmk
 
+# https://unix.stackexchange.com/a/84155/233125
+alias info='info --vi-keys'
+
 # You found the ninja completion script here:
 # https://github.com/ninja-build/ninja/blob/master/misc/bash-completion
 #
