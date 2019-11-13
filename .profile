@@ -22,6 +22,9 @@ echo "Sourcing .profile"
 #    unexpected behavior when you login via ssh (also a login shell that
 #    sources .profile).
 #
+# Clear recommendation to take this approach here:
+# https://unix.stackexchange.com/questions/26047/how-to-correctly-add-a-path-to-path
+#
 # The downside is you need to restart before getting PATH modifications in new
 # terminal sessions. In the meantime, you can always source .bash_profile
 # manually. You could also add lines to .bashrc with a TODO.
@@ -60,8 +63,17 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 
 # Added as part of CUDA/NVidia set up with Nick
+# Add CUDA to PATH and LD_LIBRARY_PATH as described here:
+# https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup
 export PATH=/usr/local/cuda/bin:${PATH}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+# Apparently required for PyTorch?
+# https://github.com/pytorch/extension-cpp/issues/26
+#
+# Also used in our code:
+# vandebun@wopr2:~/roads-torch-deep-learning-framework$ git grep CUDA_HOME
+# rcnn/setup.py:from torch.utils.cpp_extension import CUDA_HOME
+# rcnn/setup.py:    if torch.cuda.is_available() and CUDA_HOME is not None:
 export CUDA_HOME=/usr/local/cuda
 
 # Define environment variables within .profile rather than .bashrc because you
