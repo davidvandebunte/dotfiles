@@ -69,6 +69,10 @@
     # It's harder to get out of vimdiff (with :wq i.e. 3 characters) than meld. You only
     # have to type one letter with this system.
     prompt = true
+
+    # To be able to cancel a git difftool (git df) comparison part way through:
+    # https://stackoverflow.com/questions/2786619
+    trustExitCode = true
 [gitreview]
     # Search "git config --global gitreview.remote origin" on this page:
     # https://nofluffjuststuff.com/magazine/2016/04/understanding_and_applying_gerrit_part_3_gerrit_submit_types_and_git_review
