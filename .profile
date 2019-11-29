@@ -103,6 +103,10 @@ fi
 
 export EDITOR='vim'
 
+# Part of homebrew setup:
+# https://docs.brew.sh/Homebrew-on-Linux#install
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
 # As suggested here:
 # https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
 export RWO_JNI_BUILD_DIR=/home/vandebun/sdb/rwoj/RelWithDebInfo
