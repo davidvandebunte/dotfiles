@@ -27,13 +27,16 @@ alias vi=nvim
 
 # For kubectl auto completion:
 # https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-source <(kubectl completion bash)
-
-alias k=kubectl
-complete -F __start_kubectl k
+if type kubectl > /dev/null 2>&1; then
+    source <(kubectl completion bash)
+    alias k=kubectl
+    complete -F __start_kubectl k
+fi
 
 # Argo autocompletion
-source <(argo completion bash)
+if type argo > /dev/null 2>&1; then
+    source <(argo completion bash)
+fi
 
 # Turn off ^S and ^Q which you don't feel you need in any contexts:
 # https://stackoverflow.com/a/14737844/622049

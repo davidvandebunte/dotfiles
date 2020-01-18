@@ -105,7 +105,9 @@ export EDITOR='vim'
 
 # Part of homebrew setup:
 # https://docs.brew.sh/Homebrew-on-Linux#install
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+if [ -d /home/linuxbrew/.linuxbrew/bin ]; then
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
 
 # As suggested here:
 # https://confluence.in.here.com/display/RCPDS/Running+Feature+Consolidation+Filter+Locally
