@@ -4,5 +4,7 @@ tags
 *.swp
 *.swo
 
+__pycache__/
+
 # https://stackoverflow.com/a/39997938
 .ipynb_checkpoints/
