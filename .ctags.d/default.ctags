@@ -43,7 +43,14 @@
 --exclude=*.json
 --exclude=*.css
 --exclude=*.html
---exclude=site-packages
+# You'd like to keep site-packages in python projects (like frcnn). Can
+# you make a more specific exclude for HDMA? Perhaps Release/site-packages.
+#
+# Even better, you should be able to specify these project-specific ctag
+# excludes in the project somehow (the script to generate ctags) so you
+# don't have to put it in this global configuration area.
+#
+# --exclude=site-packages
 --exclude=target
 --exclude=private
 --exclude=HDR-data
