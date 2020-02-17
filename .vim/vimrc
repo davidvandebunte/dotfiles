@@ -213,7 +213,7 @@ call add(g:ale_cpp_clangtidy_checks, '-modernize-use-equals-delete,-cppcoreguide
 " Comment out the ale_fix_on_save if you ever need to edit other .py files.
 let g:ale_python_yapf_use_global = 1
 let g:ale_fixers = {'python' : ['yapf'], 'scala' : ['scalafmt']}
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 " https://freshman.tech/vim-javascript/
 nmap <F6> <Plug>(ale_fix)
 
